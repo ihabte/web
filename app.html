@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>App Order Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f0f0f0;
+    }
+    .container {
+      background: #fff;
+      padding: 25px;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+    label {
+      font-weight: bold;
+      margin-top: 15px;
+      display: block;
+    }
+    select, textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .price {
+      font-size: 18px;
+      color: green;
+      margin-top: 20px;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: #007bff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+    }
+    button:hover {
+      background-color: #0069d9;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>App Order Form</h2>
+
+  <label for="appType">Type of App:</label>
+  <select id="appType" onchange="updateAppPrice()">
+    <option value="">-- Choose App Type --</option>
+    <option value="android">Android App</option>
+    <option value="ios">iOS App</option>
+    <option value="cross">Cross-Platform App</option>
+    <option value="admin">Admin Dashboard App</option>
+    <option value="custom">Custom App</option>
+  </select>
+
+  <label for="appDesc">Description (optional):</label>
+  <textarea id="appDesc" rows="4" placeholder="Describe the app you need..."></textarea>
+
+  <div class="price" id="appPriceDisplay">Price: -</div>
+
+  <button onclick="submitAppOrder()">Submit Order</button>
+</div>
+
+<script>
+  const appPrices = {
+    android: 3000,
+    ios: 3500,
+    cross: 4000,
+    admin: 2500,
+    custom: 5000
+  };
+
+  function updateAppPrice() {
+    const type = document.getElementById("appType").value;
+    const price = appPrices[type] || "-";
+    document.getElementById("appPriceDisplay").innerText = Price: ${price === "-" ? "-" : "ETB " + price};
+  }
+
+  function submitAppOrder() {
+    const type = document.getElementById("appType").value;
+    const desc = document.getElementById("appDesc").value;
+    const price = appPrices[type];
+
+    if (!type) {
+      alert("Please select the type of app.");
+      return;
+    }
+
+    alert(App Order Submitted!\n\nType: ${type}\nDescription: ${desc || "No description"}\nPrice: ETB ${price});
+  }
+</script>
+
+</body>
+</html>

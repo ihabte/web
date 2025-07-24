@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple E-commerce</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f9f9f9;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+    .product {
+      background: white;
+      padding: 15px;
+      width: 260px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .product h3 {
+      margin: 10px 0 5px;
+    }
+    .product p {
+      margin: 0;
+      font-weight: bold;
+      color: green;
+    }
+    .product input {
+      margin-top: 10px;
+      width: 60px;
+      padding: 5px;
+      text-align: center;
+    }
+    .product button {
+      margin-top: 10px;
+      background: #28a745;
+      color: white;
+      border: none;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .product button:hover {
+      background: #218838;
+    }
+    .cart {
+      margin-top: 30px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>welcom to our E-commerce</h2>
+
+  <div class="products">
+    <!-- T-Shirt Product -->
+    <div class="product">
+      <img src="tt.jpg" alt="T-Shirt">
+      <h3>T-Shirt</h3>
+      <p>ETB 500</p>
+      <input type="number" id="qtyTshirt" placeholder="Qty" min="1">
+      <button onclick="addToCart('T-Shirt', 500, 'qtyTshirt')">Add to Cart</button>
+    </div>
+
+    <!-- Bag Product -->
+    <div class="product">
+      <img src="gg.jpg" alt="Bag">
+      <h3>Bag</h3>
+      <p>ETB 800</p>
+      <input type="number" id="qtyBag" placeholder="Qty" min="1">
+      <button onclick="addToCart('Bag', 800, 'qtyBag')">Add to Cart</button>
+    </div>
+  </div>
+
+  <div class="cart" id="cartSummary">
+    🛒 Total: ETB 0
+  </div>
+</div>
+
+<script>
+  let total = 0;
+
+  function addToCart(productName, price, qtyInputId) {
+    const qty = parseInt(document.getElementById(qtyInputId).value);
+    if (isNaN(qty) || qty <= 0) {
+      alert("Please enter a valid quantity for " + productName);
+      return;
+    }
+    const subTotal = price * qty;
+    total += subTotal;
+    document.getElementById("cartSummary").innerText = 🛒 Total: ETB ${total};
+    alert(${qty} x ${productName} added to cart!\nSubtotal: ETB ${subTotal});
+  }
+</script>
+
+</body>
+</html>

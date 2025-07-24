@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Site</title>
+ <link rel="stylesheet" href="n.css">
+</head>
+<body> 
+
+                        <header> Welcome to SS Company</header> 
+                    <div class="hero" id="home">
+                         <div class="hero-text">
+                         Build modern websites, apps,<br>
+                         and buy our products online.
+    </div>
+  </div>
+                   
+                          
+						<br>
+						 
+						 
+						 
+						 
+						 
+						<div class="text-box"> <p>
+						Our mission is to bridge the digital gap for businesses by providing high-quality, 
+	  affordable, and reliable tech solutions. We specialize in website development, mobile app creation,
+	  and comprehensive e-commerce services, aiming to support businesses of all sizes in embracing the future.<br>
+	<b>do you need modern websit for your company?</b>					 
+We design and build modern, responsive websites that are fast, secure,
+ and tailored to your brand. From simple landing pages to full-scale business websites, 
+ we help you make a lasting impression online.<br></br>
+           <button>  <a href="web.html">click to order now</a></button><br></br>
+
+<b>Need an app that works seamlessly across devices?</b>
+Our expert developers 
+create user-friendly mobile apps that deliver greatperformance and functionality 
+on both Android and iOS platforms.<br></br>
+<button>  <a href="app.html">click to order now</a></button>
+<br>
+<b>Grow your online store with our smart e-commerce systems.</b> 
+We offer product management, secure payment integration, and customer-friendly 
+interfaces to help you sell with confidence</p>
+<button>  <a href="onlinemarket.html">click to order now</a></button><br></br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="hamburger" onclick="toggleMenu()">
+                           &#9776;
+                    </div>
+
+ 
+
+  <h2 class="section-title" id="services">Our Services</h2>
+  <section class="services">
+    <div class="service-card">
+      <h3>Website Development</h3>
+      <p>Responsive, modern websites built to grow your business online.</p>
+    </div>
+    <div class="service-card">
+      <h3>App Development</h3>
+      <p>Custom mobile applications for Android and iOS platforms.</p>
+    </div>
+    <div class="service-card">
+      <h3>E-commerce Solutions</h3>
+      <p>From online stores to secure payment systems, we’ve got you covered.</p>
+    </div>
+  </section>
+<footer id="contact">
+    <p>Contact us: ibrahimhabte896@gmail.com | Phone: 0925731252</p>
+    <p>Location: Addis Ababa, Ethiopia</p>
+    <p>&copy; 2025 SS Company. All rights reserved.</p>
+  </footer>
+
+
+
+
+
+                             <div id="menu" class="side-menu">
+                                        
+                                   <li> <a href="service.html">service</a></li>
+                                   <li><a href="about.html">About</a></li>
+                                    <li><a href="contact us.html">Contact</a></li>
+									
+                                       </div>                                
+
+</div id="overlay"class"overlay"
+onclick="toggleMenu()"></div>
+
+
+<script>
+  const menu = document.getElementById("menu");
+  const overlay = document.getElementById("overlay");
+ function toggleMenu(){
+ if(menu.style.left==="0px"){
+ menu.style.left ="-250px";
+ }else{
+ menu.style.left="0px";
+ overlay.style.display="block";
+ }
+ }
+  
+</script>
+
+</body>
+</html>

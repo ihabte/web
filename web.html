@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Website Order Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 20px;
+      max-width: 500px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+    select, textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    .price {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: gold;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Website Order Form</h2>
+
+  <label for="siteType">Type of Website:</label>
+  <select id="siteType" onchange="updatePrice()">
+    <option value="">Choose Website Type</option>
+    <option value="business">Business Website</option>
+    <option value="ecommerce">E-commerce Website</option>
+    <option value="blog">Blog Website</option>
+    <option value="portfolio">Portfolio Website</option>
+    <option value="custom">Custom Website</option>
+  </select>
+
+  <label for="description">Description (optional):</label>
+  <textarea id="description" rows="4" placeholder="Write something about the website you want..."></textarea>
+
+  <div class="price" id="priceDisplay">Price: </div>
+
+  <button onclick="submitOrder()">Submit Order</button>
+</div>
+
+<script>
+  const prices = {
+    business: 1000,
+    ecommerce: 2000,
+    blog: 800,
+    portfolio: 700,
+    custom: 2500
+  };
+
+  function updatePrice() {
+    const siteType = document.getElementById("siteType").value;
+    const price = prices[siteType] || "-";
+    document.getElementById("priceDisplay").innerText = Price: ${price === "-" ? "-" : "ETB " + price};
+  }
+
+  function submitOrder() {
+    const type = document.getElementById("siteType").value;
+    const desc = document.getElementById("description").value;
+    const price = prices[type];
+
+    if (!type) {
+      alert("Please select the type of website.");
+      return;
+    }
+
+    alert(Order Submitted!\n\nType: ${type}\nDescription: ${desc || "No description"}\nPrice: ETB ${price});
+  }
+</script>
+
+</body>
+</html>
